@@ -1,9 +1,9 @@
 ![img](BarberShopApp.png)
 
 
-## Barista App
+## BarberShop App
 
-    Make a beverage order then wait for your barista to sign up and complete your order. Login authentication ensures only the baristas can complete the order.
+    Make a service order then wait for your barber to sign up and complete your service. Login authentication ensures only the barbers can complete the service.
 
 ## Tech Used
 
