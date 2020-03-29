@@ -1,0 +1,28 @@
+body{
+  padding-top:80px;
+  word-wrap:break-word;
+  background-image: url(img/barber.jpg);
+  background-size: cover;
+  color: goldenrod;
+  font-weight: bolder;
+  font-size: 1.3rem;
+  
+}
+img{
+  height: 200px;
+}
+.jumbotron{
+  background-color: inherit;
+}
+div .jumbotron.text-center{
+ color: inherit;
+}
+
+div.well{
+  background-color: rgb(255,255,255,0.2)
+}
+
+button:hover{
+  background-color: goldenrod;
+  color: white;
+}

@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Barber App</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="page-header text-center">
+      <h1><span class="fa fa-anchor"></span> Barber Queue</h1>
+      <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </div>
+
+    <div class="row">
+
+      <!-- LOCAL INFORMATION -->
+      <div class="col-sm-6">
+        <div class="well">
+          <h3><span class="fa fa-user"></span>Barber Profile</h3>
+
+          <% if (user.local.email) { %>
+          <p>
+            <strong>App Id</strong>: <%= user._id %><br>
+            <strong>Email</strong>: <%= user.local.email %><br>
+            <strong>Encrypted Password</strong>: <%= user.local.password %>
+          </p>
+
+          <a href="/unlink/local" class="btn btn-default">Delete Your Account</a>
+          <% } else { %>
+          <a href="/connect/local" class="btn btn-default">Connect Local</a>
+          <% } %>
+
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <h3>Customer Queue:</h3>
+        <input id="completeOrder" type="hidden" value= "<%= user.local.email%>">
+        <ul class="messages">
+          <% for(var i=0; i< orders.length; i++) {%>
+            <% if (user.local.email && orders[i].complete === false) { %>
+            <li class="message"> 
+              <span class="orderName"><%= orders[i].name %></span>   
+              <span class="orderItem"><%= orders[i].order %></span>
+             
+              <button onclick="responsiveVoice.speak(`<%= orders[i].name %> is all set!`);" 
+              type="button" value="Play" class="completeButton">Finished</button>
+            </li>
+          
+            <% } %>
+          <% } %>
+        </ul>
+
+    </div>
+    <div class="col-sm-6">
+      <h3>Completed Customers:</h3>
+      <input id="completeOrder" type="hidden" value= "<%= user.local.email%>">
+      <ul class="messages">
+        <% for(var i=0; i< orders.length; i++) {%>
+          <% if (orders[i].complete === true) { %>
+          <li class="message"> 
+            <span class="orderName"><%= orders[i].name %></span>   
+            <span class="orderItem"><%= orders[i].order %></span>
+            <span>Come Again.</span>
+          </li>
+        
+          <% } %>
+        <% } %>
+      </ul>
+
+  </div>
+    <script src="https://kit.fontawesome.com/077191d827.js" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=VcHOBeaW"></script>
+
+</body>
+
+</html>

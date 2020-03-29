@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+    <title>Barista App</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+
+    <div class="jumbotron text-center">
+        <h1>The Barbershop App: Shaping Up The Customer Experience</h1>
+        
+       
+        <h2 id="orderMessage"></h2>
+        <%/* if (user.local.email) { %>
+        <form action="/messages" method="POST">
+          <input type="text" value="<%= user.local.email %>" name="name">
+          <input type="text" placeholder="message" name="msg">
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <% } */%>
+
+        <form action="/vieworders" method="POST" id="order">            
+            <input name="name" id="customerName" type="text" placeholder="Your Name">
+            <input name="order" id="customerOrder" type="text" placeholder="What brings you in?">
+            <button id="placeOrder">Submit</button>
+        </form>    
+       
+
+        <p>Barber Login or Signup:</p>
+        
+        <a href="/login" class="btn btn-default"><span class="fa fa-user"></span>Login</a>
+        <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span>Signup</a>
+
+    </div>
+    <script src="main2.js"></script>
+</div>
+</body>
+</html>

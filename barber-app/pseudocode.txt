@@ -1,0 +1,29 @@
+=============================================================
+
+Create an app that enables the cashier to enter
+the customer's name and their order. 
+
+Then add that order to a queue that the baristas can
+see and give them the ability to mark an order complete.
+
+Completed orders should show which barista completed 
+the order and have their own list. Bonus points if the 
+app automatically says the customer's name out loud when 
+an order is complete.
+
+=============================================================
+
+how many pages we need?
+login&order.ejs - make the order (the order form)
+
+login.ejs (barista) - barista logs in 
+baristaprof.ejs () - DB where barista logs in and sees order requests 
+    Should be able to see: 
+        order 
+        persons name
+    Should be able to do: 
+        mark complete
+        send back to client 
+        have login barista name 
+        say "Lakeisha ya coffee ready"        
+signup.ejs - become a barista oh la la 
