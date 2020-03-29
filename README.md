@@ -1,4 +1,4 @@
-![img](BarberShopApp)
+![img](BarberShopApp.png)
 
 
 ## Barista App
